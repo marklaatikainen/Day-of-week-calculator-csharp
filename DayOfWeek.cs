@@ -1,3 +1,8 @@
+/*
+ Author: Mark Laatikainen
+ made 18.09.2017
+*/
+
 using System;
 
 namespace DayOfWeek
@@ -9,6 +14,7 @@ namespace DayOfWeek
             int year = 0;
             while (year < 1)
             {
+                // user input year
                 Console.Write("Anna vuosi: ");
                 year = Convert.ToInt32(Console.ReadLine());
             }
@@ -16,6 +22,7 @@ namespace DayOfWeek
             int month = 0;
             while (month < 1 || month > 12)
             {
+                // user input month
                 Console.Write("Anna kuukausi: ");
                 month = Convert.ToInt32(Console.ReadLine());
             }
@@ -23,12 +30,15 @@ namespace DayOfWeek
             int day = 0;
             while (day < 1 || day > 31)
             {
+                // user input day
                 Console.Write("Anna päivämäärä: ");
                 day = Convert.ToInt32(Console.ReadLine());
             }
 
-
+            // returns weekday int 0-6
             int pvm = DayOfWeek(year, month, day);
+            
+            // returns weekday string monday - sunday
             string weekday = WeekDay(pvm);
             Console.WriteLine();
             Console.WriteLine("Päivämäärän " + day + "." + month + "." + year + " viikonpäivä oli " + weekday);
